@@ -1,0 +1,267 @@
+/* ---------------------------------------------------------
+                           Header
+   ---------------------------------------------------------*/
+/* Top line */
+.header {
+  position: absolute;
+  width: 100%;
+}
+
+.top-line {
+  height: 100px;
+  position: relative;
+  padding: 40px 0;
+  z-index: 2;
+  background: transparent;
+  text-align: center;
+  font-size: 14px;
+
+  @include media("<992px") {
+    padding: 10px 0;
+  }
+
+  .sf-menu {
+    @include media("<992px") {
+      display: none !important;
+    }
+  }
+}
+
+.logo {
+  font-family: RalewayRegular;
+  color: $white;
+  text-align: left;
+  font-size: 0;
+
+  @include media("<992px") {
+    text-align: right;
+  }
+
+  &__img,
+  &__text {
+    display: inline-block;
+  }
+
+  &__text {
+    font-size: 34px;
+    vertical-align: middle;
+  }
+}
+
+.search_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search {
+  &__cart,
+  &__search {
+    display: inline-block;
+  }
+
+  &__cart {
+    margin-right: 20px;
+
+    @include media("<1200px", ">991px") {
+      margin-right: 4px;
+    }
+  }
+}
+.header-menu.sf-menu,
+.sf-menu .header-submenu {
+  @extend %listreset;
+  width: 100%;
+
+  .header-menu__link,
+  .header-submenu__link {
+    padding: 15px 35px 15px 5px;
+    border: none;
+    color: $white;
+    text-align: left;
+
+    @include media("<1200px") {
+      padding: 15px 30px 15px 5px;
+    }
+  }
+
+  .header-submenu__link {
+    text-align: left;
+  }
+}
+
+.header-menu.sf-menu {
+  display: inline-block;
+  margin: 0 auto -6px;
+  float: none;
+  font-family: Montserrat-Light;
+  font-size: 0.9375em;
+
+
+  .header-menu__li {
+    display: inline-block;
+    background-color: transparent;
+  }
+
+  .header-menu__link {
+    .fa {
+      font-size: 11px;
+      margin-left: 2px;
+    }
+  }
+
+  .header-menu__li:hover,
+  .header-menu__li_active{
+    .header-menu__link {
+      color: $accent;
+    }
+  }
+
+  //submenu
+  .header-submenu {
+    &__li {
+      background: rgba(54, 47, 45, .3);
+    }
+
+    &__link {
+      padding: 10px 20px;
+      border-bottom: lighten($main, 5%) 1px solid;
+      border-left: lighten($main, 5%) 1px solid;
+    }
+  }
+
+  .header-submenu__li:hover,
+  .header-submenu__li_active {
+
+    >.header-submenu__link {
+      color: $accent;
+    }
+  }
+}
+
+/* Gamburger for menu */
+
+.toggle-mnu {
+  position: absolute;
+  margin: 27px 15px 15px;
+  width: 28px;
+  height: 28px;
+  float: left;
+  display: block;
+  cursor: pointer;
+  z-index: 3;
+
+  span,
+  span:after,
+  span:before {
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+    border-radius: 2px;
+    transition: all 0.8s ease;
+  }
+
+  span:after,
+  span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+  }
+
+  span:after {
+    top: 18px;
+  }
+
+  span {
+    position: relative;
+    display: block;
+  }
+
+  &.on span {
+    background-color: transparent;
+  }
+
+  &.on span:before {
+    transform: rotate(45deg) translate(-1px, 0px);
+  }
+
+  &.on span:after {
+    transform: rotate(-45deg) translate(6px, -7px);
+  }
+}
+
+
+// for scroll
+html.mm-opened {
+  overflow-y: scroll;
+}
+.mm-panels > .mm-panel.mm-hasnavbar {
+  right: -18px;
+}
+
+.mm-menu.mm-offcanvas .fa {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @extend %flex;
+// @extend %clearfix;
+// @extend %transition;            // (all .5s ease)
+// @extend %listreset;             // (margin:0; padding:0; list-style: none;)
+
+// @include animate(color)         // (transform opacity, .6s) // (visibility opacity); (0.3s ease-in-out)
+// @include size(16px)             // (15px, 4px);
+// @include v-align(157px);
+// @include font(14px,18px,#000);  // (font-size, line-height, color)
+
+
+// font: italic 15px/1.75 'Times New Roman';
+// @include center_transform();
+// @include verrical_center_transform();
+// @include gradient(left, right, rgba(0,0,0,1), rgba(255,255,255,1));
+// @include button(#000,1px,#f0f0f0,25px,16px,19px,40px,20px);
+
+
+// media queries
+
+//@include media("<1200px", ">991px") {
+//}
+
+//@include media("<480px") {
+//}
+
+//@include media(">=480px") {
+//}
+
+//@include media("<tablet") {
+//}
+
+//@include media(">=tablet") {
+//}
+
+//@include media("<992px") {
+//}
+
+//@include media(">=992px") {
+//}
+
+//@include media("<1200px") {
+//}
+
+//@include media(">=1200px") {
+//}

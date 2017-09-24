@@ -1,0 +1,36 @@
+/* ---------------------------------------------------------
+                      Buttons
+   ---------------------------------------------------------*/
+// button DRY
+
+.button {
+  position: relative;
+  padding: 1.15em 2.7em;
+  display: inline-block;
+  border: none;
+  border-radius: 0.125em;
+  outline: none;
+  color: $btn-color;
+  background: $btn-background;
+  text-decoration: none;
+  font-size: $btn-font-size;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  //letter-spacing: 0.1875em;
+  text-align: center;
+  vertical-align: top;
+  background-image: linear-gradient(transparent 92%, darken($btn-background, 7%) 0);
+  transition: background 1s ease, opacity 1s ease;
+
+  &:focus, &:hover {
+    //background-image: linear-gradient(lighten($btn-background, 5%) 92%, darken($btn-background, 3%) 0);  //transition didn't work
+    text-decoration: none;
+    color: $white;
+    opacity: .85;
+  }
+
+  &:active {
+    background-color: darken($btn-background, 5%);
+  }
+}

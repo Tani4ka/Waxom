@@ -1,0 +1,66 @@
+/* ---------------------------------------------------------
+                            Footer
+   ---------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @extend %flex;
+// @extend %clearfix;
+// @extend %transition;            // (all .5s ease)
+// @extend %listreset;             // (margin:0; padding:0; list-style: none;)
+
+// @include animate(color)         // (transform opacity, .6s) // (visibility opacity); (0.3s ease-in-out)
+// @include size(16px)             // (15px, 4px);
+// @include v-align(157px);
+// @include font(14px,18px,#000);  // (font-size, line-height, color)
+
+
+// font: italic 15px/1.75 'Times New Roman';
+// @include center_transform();
+// @include verrical_center_transform();
+// @include gradient(left, right, rgba(0,0,0,1), rgba(255,255,255,1));
+// @include button(#000,1px,#f0f0f0,25px,16px,19px,40px,20px);
+
+
+// media queries
+
+//@include media("<1200px", ">991px") {
+//}
+
+//@include media("<480px") {
+//}
+
+//@include media(">=480px") {
+//}
+
+//@include media("<tablet") {
+//}
+
+//@include media(">=tablet") {
+//}
+
+//@include media("<992px") {
+//}
+
+//@include media(">=992px") {
+//}
+
+//@include media("<1200px") {
+//}
+
+//@include media(">=1200px") {
+//}

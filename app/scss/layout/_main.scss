@@ -1,0 +1,198 @@
+/* ---------------------------------------------------------
+                            Main
+   ---------------------------------------------------------*/
+.carousel {
+  position: relative;
+}
+
+.carousel-item {
+  display: flex;
+  height: 100vh;
+  min-height: 700px;
+}
+
+.carousel-content {  //36
+  width: 600px;
+  margin: auto;
+  color: $white;
+  text-align: center;
+  padding-top: 10px;
+
+  &__h2 {
+    font-family: RalewayMedium;
+    font-size: 36px;
+    margin: 0;
+    line-height: 1.2;
+
+    @include media("<480px") {
+      font-size: 1.6em;
+      margin-bottom: 15px;
+    }
+  }
+  
+  &__header {
+    font-family: RalewayExtraBold;
+    margin: 0;
+    letter-spacing: 1.3px;
+
+    @include media("<480px") {
+      font-size: 2.7em;
+      line-height: 1em;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    margin-top: 5px;
+  }
+
+  &__button {
+    margin-top: 35px;
+  }
+}
+
+.owl-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  margin-top: -18px;
+  font-size: 25px;
+  color: $white;
+  
+  &:hover {
+    .carousel__nav {
+      border-color: $beige;
+    }
+  }
+}
+
+.owl-prev {
+  left: 15px;
+  @include media(">1800px") {
+    left: -215px;
+  }
+}
+.owl-next {
+  right: 15px;
+  @include media(">1800px") {
+    right: -215px;
+  }
+}
+
+.carousel__nav {
+  width: 53px;
+  height: 53px;
+  background: transparent;
+  border-bottom: 3px solid $white;
+  border-left: 3px solid  $white;
+  transform: rotate(45deg);
+  opacity: .5;
+  @extend %transition;
+}
+
+.owl-next {
+  .carousel__nav {
+    transform: rotate(225deg);
+  }
+}
+
+.owl-carousel .owl-item {
+  backface-visibility: inherit;
+}
+
+.owl-dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+}
+
+.owl-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  background: rgba(255, 255, 255, .5);
+  border: 2px solid transparent;
+  vertical-align: middle;
+  @extend %transition;
+
+  &.active {
+    background: transparent;
+    border: 2px solid $beige;
+    box-sizing: content-box;
+  }
+}
+
+
+
+
+
+
+
+
+
+  // @extend %flex;
+  // @extend %clearfix;
+  // @extend %transition;            // (all .5s ease)
+  // @extend %listreset;             // (margin:0; padding:0; list-style: none;)
+
+  // @include animate(color)         // (transform opacity, .6s) // (visibility opacity); (0.3s ease-in-out)
+  // @include size(16px)             // (15px, 4px);
+  // @include v-align(157px);
+  // @include font(14px,18px,#000);  // (font-size, line-height, color)
+
+
+  // font: italic 15px/1.75 'Times New Roman';
+  // @include center_transform();
+  // @include verrical_center_transform();
+  // @include gradient(left, right, rgba(0,0,0,1), rgba(255,255,255,1));
+  // @include button(#000,1px,#f0f0f0,25px,16px,19px,40px,20px);
+
+
+  // media queries
+
+  //@include media("<1200px", ">991px") {
+  //}
+
+  //@include media("<480px") {
+  //}
+
+  //@include media(">=480px") {
+  //}
+  //768
+  //@include media("<tablet") {
+  //}
+
+  //@include media(">=tablet") {
+  //}
+
+  //@include media("<992px") {
+  //}
+
+  //@include media(">=992px") {
+  //}
+
+  //@include media("<1200px") {
+  //}
+
+  //@include media(">=1200px") {
+  //}
+
+
+
+
+
+
