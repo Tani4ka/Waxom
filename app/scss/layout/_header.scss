@@ -151,6 +151,14 @@
   cursor: pointer;
   z-index: 3;
 
+  &:hover {
+    span,
+    span:after,
+    span:before {
+      background: $accent;
+    }
+}
+
   span,
   span:after,
   span:before {

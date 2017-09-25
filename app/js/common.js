@@ -88,27 +88,27 @@ $(function() {
 
     /* Equalheight from plugin */
 
-    //(function ($) {
-    //    $.fn.equalHeights = function () {
-    //        var $items = $(this);
-    //        function equalize() {
-    //            $items.height('initial');
-    //            var maxH = $items.eq(0).height();
-    //            $items.each(function () {
-    //                maxH = ($(this).height() > maxH) ? $(this).height() : maxH;
-    //            });
-    //            $items.height(maxH);
-    //        }
-    //        equalize();
-    //        $(window).bind('resize', function () {
-    //            equalize();
-    //        });
-    //    };
-    //})(jQuery);
-    //
-    //// call equalHeights
-    //$('.services__header').equalHeights();
-    //$('.services__text').equalHeights();
+    (function ($) {
+        $.fn.equalHeights = function () {
+            var $items = $(this);
+            function equalize() {
+                $items.height('initial');
+                var maxH = $items.eq(0).height();
+                $items.each(function () {
+                    maxH = ($(this).height() > maxH) ? $(this).height() : maxH;
+                });
+                $items.height(maxH);
+            }
+            equalize();
+            $(window).bind('resize', function () {
+                equalize();
+            });
+        };
+    })(jQuery);
+
+    // call equalHeights
+    $('.products__header').equalHeights();
+    $('.products__text').equalHeights();
 
 
     /* Fixed sidebar block */
@@ -208,10 +208,15 @@ $(function() {
     //}carouselService();
 
 
-    function carouselService() {
+    function logoHeight() {
         var logoHeight = $('.logo').outerHeight();
         $('.search_wrap').css('min-height', logoHeight);
-    }carouselService();
+    }logoHeight();
+
+    function themeHeight() {
+        var themeHeight = $('.s-theme_wrap').outerHeight();
+        $('.s-theme__button_wrap').css('min-height', themeHeight);
+    }themeHeight();
 
 
     /* Blocks the same height */
@@ -238,12 +243,12 @@ $(function() {
     //    var ths = $(this);
     //    ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>')); // выделяет последнее слово в span
     //});
-    //
-    //
-    //$('section .h2').each(function () {
-    //    var ths = $(this);
-    //    ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));  // выделяет первое слово в span
-    //});
+
+
+    $('.s-theme__header').each(function () {
+        var ths = $(this);
+        ths.html(ths.html().replace(/^(\S+)/, '<span class="s-theme__header_beige">$1</span>'));  // выделяет первое слово в span
+    });
 
 
     /* Selectize */

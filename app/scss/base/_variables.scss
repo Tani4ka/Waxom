@@ -7,6 +7,7 @@ $white: #fff;
 $orange: #ffa500;
 $blue: #007fe3;
 $dark: #1a1a1a;  //for preloader
+$gray: #555555;
 
 // Site colors
 $over: #555556;
@@ -14,7 +15,6 @@ $main: #362f2d;
 $beige: #d3c1ae;         // for decoration
 $accent: #c7b299;           // beige for text
 $light-brown: #998675;     // button
-$gray: #555555;
 $light-gray: #8c8c8c;      // gray text
 $light-black: #1a1a1a;     // headings
 
@@ -26,13 +26,13 @@ $base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
 $base-text-color: $light-gray !default;
 $base-background-color: $white !default;
 $font-size-base: 16px !default;
-$line-height-base: 1.6 !default;                          // 1.6 standart
+$line-height-base: 1.7 !default;                          // 1.6 standart
 $base-font-family: 'Montserrat-Light', $base-font-sans-serif !default;
 $vertical-rhythm: $line-height-base;
 $base-min-width: 320px;
 
 // Liks
-$base-link-color: $blue;
+$base-link-color: $gray;
 
 // Buttons 
 $btn-color: $white !default;
@@ -54,7 +54,7 @@ $h3-font-size: 1.25em !default;   // 20px
 $h4-font-size: 19px !default;
 $h5-font-size: 17px !default;
 $h6-font-size: 15px !default;
-$headings-font-family: inherit !default;
-$headings-color: inherit !default;
+$headings-font-family: 'RalewaySemiBold' !default;
+$headings-color: $gray !default;
 
 $animation-speed: 0.3s;

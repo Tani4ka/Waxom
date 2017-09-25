@@ -1,17 +1,49 @@
 /* ---------------------------------------------------------
                       Buttons
    ---------------------------------------------------------*/
-// button DRY
+// button DRY without transition
+
+//.button {
+//  position: relative;
+//  padding: 1.15em 2.7em;
+//  display: inline-block;
+//  border: none;
+//  border-radius: 0.125em;
+//  outline: none;
+//  color: $btn-color;
+//  background: $btn-background;
+//  text-decoration: none;
+//  font-size: $btn-font-size;
+//  line-height: 1.5em;
+//  text-transform: uppercase;
+//  font-weight: bold;
+//  //letter-spacing: 0.1875em;
+//  text-align: center;
+//  vertical-align: top;
+//  background-image: linear-gradient(transparent 92%, darken($btn-background, 7%) 0);
+//  transition: background 1s ease, opacity 1s ease;
+//
+//  &:focus, &:hover {
+//    background-image: linear-gradient(lighten($btn-background, 5%) 92%, darken($btn-background, 3%) 0);  //transition didn't work
+//    text-decoration: none;
+//    color: $white;
+//  }
+//
+//  &:active {
+//    background-color: darken($btn-background, 5%);
+//  }
+//}
+
 
 .button {
   position: relative;
-  padding: 1.15em 2.7em;
+  padding: 1.125em 2.7em;
   display: inline-block;
   border: none;
   border-radius: 0.125em;
   outline: none;
   color: $btn-color;
-  background: $btn-background;
+  background-color: $btn-background;
   text-decoration: none;
   font-size: $btn-font-size;
   line-height: 1.5em;
@@ -19,18 +51,37 @@
   font-weight: bold;
   //letter-spacing: 0.1875em;
   text-align: center;
-  vertical-align: top;
-  background-image: linear-gradient(transparent 92%, darken($btn-background, 7%) 0);
-  transition: background 1s ease, opacity 1s ease;
+  vertical-align: middle;
+  transition: background-color .25s ease;
+  z-index: 100;
 
-  &:focus, &:hover {
-    //background-image: linear-gradient(lighten($btn-background, 5%) 92%, darken($btn-background, 3%) 0);  //transition didn't work
-    text-decoration: none;
-    color: $white;
-    opacity: .85;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: darken($btn-background, 10%);
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    transition: background-color .25s ease;
   }
 
+  &:focus, &:hover {
+    outline: none;
+    text-decoration: none;
+    color: $white;
+  }
+  &:hover {
+    background-color: lighten($btn-background, 8%);
+    color: lighten($btn-color, 10%);
+
+    &::after {
+      background: darken($btn-background, 5%);
+    }
+  }
   &:active {
-    background-color: darken($btn-background, 5%);
+    background-color: darken($btn-background, 10%);
   }
 }
