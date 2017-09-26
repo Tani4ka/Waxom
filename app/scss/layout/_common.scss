@@ -144,3 +144,13 @@ header, section, footer {
   }
 }
 
+.s-ideas {
+  .container {
+    @include media(">1200px") {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+

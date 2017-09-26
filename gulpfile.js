@@ -33,6 +33,9 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/jQuery.mmenu/jquery.mmenu.all.js',
 		'app/libs/superfish/js/superfish.min.js',
 		'app/libs/OwlCarousel/owl.carousel.min.js',
+		//'app/libs/Swiper/dist/js/swiper.min.js',
+		'app/libs/content-filter/js/main.js',
+		'app/libs/content-filter/js/jquery.mixitup.min.js',
 
 		'app/js/common.min.js', // Всегда в конце
 		])
