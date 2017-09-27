@@ -25,9 +25,14 @@
     line-height: 1.2;
     color: $white;
 
+    @include media("<tablet") {
+      font-size: 2em;
+      margin-bottom: 10px;
+      line-height: 1em;
+    }
+
     @include media("<480px") {
-      font-size: 1.6em;
-      margin-bottom: 15px;
+      display: none;
     }
   }
   
@@ -37,10 +42,19 @@
     letter-spacing: 1.3px;
     color: $white;
 
-    @include media("<480px") {
-      font-size: 2.7em;
+    @include media("<tablet") {
       line-height: 1em;
+    }
+
+    @include media("<480px") {
+      font-size: 2.4em;
       margin-bottom: 15px;
+    }
+
+    &_br {
+      @include media("<tablet") {
+        display: block;
+      }
     }
   }
 
@@ -50,6 +64,10 @@
 
   &__button {
     margin-top: 35px;
+
+    @include media("<480px") {
+      margin-top: 20px;
+    }
   }
 }
 
@@ -63,6 +81,10 @@
   z-index: 2;
   font-size: 25px;
   color: $white;
+
+  @include media("<tablet") {
+    display: none;
+  }
 }
 
 .owl-prev,
@@ -237,19 +259,21 @@
     line-height: 1.25em;
   }
 
+  &__button_wrap {
+    //padding: 0 15px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include media("<tablet") {
+      justify-content: flex-start;
+    }
+  }
+
   &__button {
     padding: 1.036em 1.81em;
 
-    &_wrap {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-
-      @include media("<tablet") {
-        justify-content: flex-start;
-      }
-    }
-    
     &_nopad {
       @include media(">=tablet") {
         padding-left: 0;
@@ -323,10 +347,10 @@
   }
 }
 
-/* s-projects */
+/* s-portfolio */
 
 .s-portfolio {
-  padding: 70px 0 0;
+  padding: 70px 0 80px;
   text-align: center;
 }
 
@@ -342,34 +366,12 @@
   }
 }
 
-// change plugin galary
-.cd-gallery {
-  padding: 42px 0;
-
-  @include media(">=1170px") {
-    padding: 42px 0;
-  }
-
-   ul {
-     @extend %listreset;
-   }
-
-   li {
-     @include media(">=768px") {
-       width: 47%;
-       margin: 0 10px;
-     }
-
-     @include media(">=992px") {
-       width: 30.9%;
-     }
-
-     @include media(">=1200px") {
-        width: 31.3%;
-     }
-   }
+.portfolio__button {
+    padding: 1.036em 2.96em;
 }
 
+
+// change plugin galary
 .cd-tab-filter-wrapper {
   background: transparent;
   box-shadow: none;
@@ -417,41 +419,192 @@
 }
 
 @include media("<tablet") {
-
   .cd-tab-filter li:first-child a {
     background: $light-brown;
     color: $white;
   }
-
-  .cd-gallery {
-    padding: 70px 0;
-  }
 } // change plugin galary finish
 
 
-.portfolio-galary {
-  &__header {
-    font-family: RalewayMedium;
-    color: $accent;
-    margin: 25px 0 0 30px;
+.cd-gallery.portfolio-galary {
+  min-height: 720px;
+  padding: 70px 0 10px;
+
+  @include media("<tablet") {
+    padding: 70px 15px 10px;
   }
 
-  &__text {
-    color: #d1d1d1;
-    margin: 0 0 25px 30px;
+  @include media(">=1170px") {
+    padding: 42px 0 10px;
   }
-  
-  li {
+
+  .portfolio-galary__list {
+    @extend %listreset;
+  }
+
+  .portfolio-galary__li {
     background: #fbfaf8;
     margin-bottom: 30px;
+    @extend %transition;
     //box-shadow: none;
+
+    @include media(">=768px") {
+    width: 47%;
+    margin: 0 10px 30px;
+    }
+
+    @include media(">=992px") {
+      width: 30.9%;
+    }
+
+    @include media(">=1200px") {
+      width: 31.3%;
+    }
   }
+
+  .portfolio-galary__img {
+    margin-bottom: 25px;
+    position: relative;
+    @extend %transition;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: $main;
+      opacity: 0;
+      @extend %transition;
+      }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      width: 10px;
+      height: 5px;
+      border-left: 14px solid transparent;
+      border-bottom: 10px solid $white;
+      border-right: 14px solid transparent;
+      @extend %transition;
+    }
+  }
+
+  .portfolio-galary__header {
+    font-family: RalewayMedium;
+    color: $accent;
+    margin-bottom: 0;
+    padding-left: 30px;
+
+    @include media("<tablet") {
+      padding-left: 0;
+    }
+  }
+
+  .portfolio-galary__text {
+    color: #d1d1d1;
+    margin-bottom: 22px;
+    padding-left: 30px;
+
+    @include media("<tablet") {
+      padding-left: 0;
+    }
+  }
+
+  .portfolio-galary__lupa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -21px;
+    transform: translateX(-50%);
+    opacity: 0;
+    @extend %transition;
+  }
+
+  .portfolio-galary__icon {
+    font-family: waxom-icons;
+    font-size: 25px;
+    color: $accent;
+  }
+  .portfolio-galary__icon.icon-lupa {
+    color: $white;
+    margin-left: 12px;
+  }
+
+  .portfolio-galary__li:hover {
+    background: $main;
+
+    .portfolio-galary__img {
+      &::before {
+        opacity: .7;
+      }
+      &::after {
+        border-bottom-color: $main;
+      }
+    }
+    .portfolio-galary__header {
+      color: $white;
+    }
+    .portfolio-galary__text {
+      color: $accent;
+    }
+    .portfolio-galary__lupa {
+      opacity: 1;
+    }
+  }
+}
+
+/* presentation */
+
+.presentation {
+  height: 705px;
+  color: $white;
+  text-align: center;
+
+  &__loader {
+    display: block;
+    margin: 0 auto 30px;
+  }
+
+  &_wrap {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &__header {
+    color: inherit;
+  }
+
+  &__time {
+    color: $accent;
+    font-size: 0.8125em;
+    font-weight: bold;
+    margin-top: 25px;
+   }
 }
 
 
 
 
 
+
+
+
+
+  //&::before {
+  //  content: '';
+  //  position: absolute;
+  //  top: 0px;
+  //  left: 0px;
+  //  width: 10px;
+  //  height: 10px;
+  //  background: $dark;
+  //}
 
   // @extend %flex;
   // @extend %clearfix;

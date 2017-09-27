@@ -131,7 +131,8 @@ header, section, footer {
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba($over, .92);
+    background: rgba($over, .2);
+    //z-index: 1;
   }
 }
 

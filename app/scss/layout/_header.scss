@@ -25,17 +25,17 @@
       display: none !important;
     }
   }
+
+  @include media("<480px") {
+    padding-top: 30px;
+  }
 }
 
 .logo {
   font-family: RalewayRegular;
   color: $white;
-  text-align: left;
+  text-align: center;
   font-size: 0;
-
-  @include media("<992px") {
-    text-align: right;
-  }
 
   &__img,
   &__text {
@@ -45,6 +45,10 @@
   &__text {
     font-size: 34px;
     vertical-align: middle;
+
+    @include media("<480px") {
+      display: none;
+    }
   }
 }
 
@@ -52,6 +56,10 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @include media("<tablet") {
+    justify-content: center;
+  }
 }
 
 .search {
@@ -62,6 +70,10 @@
 
   &__cart {
     margin-right: 20px;
+
+    @include media("<480px") {
+      display: none;
+    }
 
     @include media("<1200px", ">991px") {
       margin-right: 4px;
@@ -143,13 +155,17 @@
 
 .toggle-mnu {
   position: absolute;
-  margin: 27px 15px 15px;
+  margin: 27px 0 0 7%;
   width: 28px;
   height: 28px;
   float: left;
   display: block;
   cursor: pointer;
   z-index: 3;
+
+  @include media("<480px") {
+    margin: 45px 0 0 7%;
+  }
 
   &:hover {
     span,

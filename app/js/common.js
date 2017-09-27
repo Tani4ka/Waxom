@@ -213,11 +213,6 @@ $(function() {
         $('.search_wrap').css('min-height', logoHeight);
     }logoHeight();
 
-    function themeHeight() {
-        var themeHeight = $('.s-theme_wrap').outerHeight();
-        $('.s-theme__button_wrap').css('min-height', themeHeight);
-    }themeHeight();
-
 
     /* Blocks the same height */
 
