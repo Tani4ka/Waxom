@@ -375,8 +375,8 @@ $(function() {
     //    $('#callback .formname').val($(this).data('form'));
     //});
 
-
-
+    //presentationHeight = $(".presentation__img").outerHeight();
+    //$(".presentation__wrap").css('top', 'presentationHeight');
 
 });
 
