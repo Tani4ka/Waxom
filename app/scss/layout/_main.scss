@@ -201,7 +201,7 @@
     display: block;
     font-size: 45px;
     display: flex;
-    font-family: 'waxom-icons';
+    font-family: 'waxom-icon';
     align-items: center;
     justify-content: center;
     @extend %transition;
@@ -529,7 +529,7 @@
   }
 
   .portfolio-galary__icon {
-    font-family: waxom-icons;
+    font-family: waxom-icon;
     font-size: 25px;
     color: $accent;
   }
@@ -564,31 +564,66 @@
 /* presentation */
 
 .presentation {
+  min-height: 300px;
   color: $white;
   text-align: center;
 
+  &__img {
+    position: relative;
+    min-height: 300px;
+    height: auto;
+    width: 100%;
+    min-width: 100%;
+    z-index: 1;
 
-  &__loader {
-    display: block;
-    margin: 0 auto;
+    @include media("<992px") {
+      height: 300px;
+      width: auto;
+    }
+
+    &_wrap {
+      overflow: hidden;
+    }
   }
+
+  //&__loader {
+  //  display: block;
+  //  margin: 0 auto 35px;
+  //
+  //  @include media("<992px") {
+  //    margin-bottom: 20px;
+  //  }
+  //}
 
   &_wrap {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 35%;
-    height: 235px;
+    width: 33%;
     transform: translate(-50%, -50%);
-    opacity: .9;
-    z-index: 0;
+    opacity: .8;
+    z-index: 2;
 
     @include media("<1200px") {
       width: 55%;
     }
-
     @include media("<tablet") {
-      height: 105px;
+      height: 100px;
+    }
+  }
+
+  &__loader {
+    width: 100px;
+    height: 100px;
+    margin: 8px auto 35px;
+    font-family: 'waxom-icon';
+    font-size: 72px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    line-height: 100px;
+
+    @include media("<992px") {
+      margin: 10px auto;
     }
   }
 
@@ -611,29 +646,36 @@
     color: $accent;
     font-size: 0.8125em;
     font-weight: bold;
-    margin-top: 25px;
+    margin-top: 31px;
 
     @include media("<tablet") {
       display: none;
     }
   }
-
-  &:hover {
-    .iframe {
-      opacity: 1;
-    }
-  }
 }
 
-.iframe {
+.video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
+  z-index: 0;
 }
 
+video::-webkit-media-controls-panel {
+  background: black;
+}
+
+//.iframe {
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  width: 100%;
+//  height: 100%;
+//  z-index: 0;
+//  opacity: 0;
+//}
 
 
 
@@ -641,62 +683,66 @@
 
 
 
-  //&::before {
-  //  content: '';
-  //  position: absolute;
-  //  top: 0px;
-  //  left: 0px;
-  //  width: 10px;
-  //  height: 10px;
-  //  background: $dark;
-  //}
-
-  // @extend %flex;
-  // @extend %clearfix;
-  // @extend %transition;            // (all .5s ease)
-  // @extend %listreset;             // (margin:0; padding:0; list-style: none;)
-
-  // @include animate(color)         // (transform opacity, .6s) // (visibility opacity); (0.3s ease-in-out)
-  // @include size(16px)             // (15px, 4px);
-  // @include v-align(157px);
-  // @include font(14px,18px,#000);  // (font-size, line-height, color)
 
 
-  // font: italic 15px/1.75 'Times New Roman';
-  // @include center_transform();
-  // @include verrical_center_transform();
-  // @include gradient(left, right, rgba(0,0,0,1), rgba(255,255,255,1));
-  // @include button(#000,1px,#f0f0f0,25px,16px,19px,40px,20px);
 
 
-  // media queries
+//&::before {
+//  content: '';
+//  position: absolute;
+//  top: 0px;
+//  left: 0px;
+//  width: 10px;
+//  height: 10px;
+//  background: $dark;
+//}
 
-  //@include media("<1200px", ">991px") {
-  //}
+// @extend %flex;
+// @extend %clearfix;
+// @extend %transition;            // (all .5s ease)
+// @extend %listreset;             // (margin:0; padding:0; list-style: none;)
 
-  //@include media("<480px") {
-  //}
+// @include animate(color)         // (transform opacity, .6s) // (visibility opacity); (0.3s ease-in-out)
+// @include size(16px)             // (15px, 4px);
+// @include v-align(157px);
+// @include font(14px,18px,#000);  // (font-size, line-height, color)
 
-  //@include media(">=480px") {
-  //}
-  //768
-  //@include media("<tablet") {
-  //}
 
-  //@include media(">=tablet") {
-  //}
+// font: italic 15px/1.75 'Times New Roman';
+// @include center_transform();
+// @include verrical_center_transform();
+// @include gradient(left, right, rgba(0,0,0,1), rgba(255,255,255,1));
+// @include button(#000,1px,#f0f0f0,25px,16px,19px,40px,20px);
 
-  //@include media("<992px") {
-  //}
 
-  //@include media(">=992px") {
-  //}
+// media queries
 
-  //@include media("<1200px") {
-  //}
+//@include media("<1200px", ">991px") {
+//}
 
-  //@include media(">=1200px") {
-  //}
+//@include media("<480px") {
+//}
+
+//@include media(">=480px") {
+//}
+//768
+//@include media("<tablet") {
+//}
+
+//@include media(">=tablet") {
+//}
+
+//@include media("<992px") {
+//}
+
+//@include media(">=992px") {
+//}
+
+//@include media("<1200px") {
+//}
+
+//@include media(">=1200px") {
+//}
 
 
 

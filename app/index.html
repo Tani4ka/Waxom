@@ -84,8 +84,8 @@
                         <div class="col-md-1 col-sm-4 col-xs-3">
                             <div class="search_wrap">
                                 <div class="search">
-                                    <img class="img-responsive search__cart" src="img/cart.png" alt="Cart">
-                                    <img class="img-responsive search__search" src="img/search.png" alt="Search">
+                                    <i class="icon-cart  search__cart"></i>
+                                    <i class="icon-search  search__search"></i>
                                 </div>
                             </div>
                         </div>
@@ -94,8 +94,9 @@
                 </div>
             </nav>
         </header>
+        <!-- Header end -->
 
-
+        <!-- Section slider start -->
         <section style="background-image: url(img/Waxom-Hemepage.jpg);">
             <div class="container">
                 <div class="row">
@@ -160,8 +161,10 @@
                 </div>
             </div>
         </section>
+        <!-- Section slider end -->
 
 
+        <!-- Section s-products start -->
         <section class="s-products">
             <div class="container">
                 <div class="row">
@@ -205,8 +208,10 @@
                 </div>
             </div>
         </section>
+        <!-- Section s-products end -->
 
 
+        <!-- Section s-ideas start -->
         <section class="s-ideas">
             <div class="container">
                 <div class="row">
@@ -231,8 +236,10 @@
 
             </div>
         </section>
+        <!-- Section s-ideas end -->
 
 
+        <!-- Section s-theme start -->
         <section class="s-theme">
             <div class="container">
                 <div class="row">
@@ -250,8 +257,10 @@
                 </div>
             </div>
         </section>
+        <!-- Section s-theme end -->
 
 
+        <!-- Section s-portfolio start -->
         <section class="s-portfolio">
             <div class="container">
                 <div class="row">
@@ -357,51 +366,71 @@
                 </div>
             </div>
         </section>
+        <!-- Section s-portfolio end -->
 
 
-        <section class="presentation overlay"> <!-- style="background-image: url(img/video_bg.jpg);" -->
-            <!--<div class="container-fluid">-->
-                <!--<div class="row">-->
-
-                    <img class="presentation__img img-responsive" src="img/video_bg.jpg" alt="Presentation video"/>
-
-                    <!--<div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-7 col-sm-offset-3 col-xs-10 col-xs-offset-1">-->
-                        <div class="presentation_wrap">
-                            <img class="presentation__loader" src="img/loder.png" alt="Loading button"/>
-                            <h2 class="presentation__header">Waxom Video Presentation</h2>
-                            <p class="presentation__text">Investigationes demonstraverunt lectores legere me lius quod Lorem ipsum dolor sit amet, consectetur.</p>
-                            <div class="presentation__time">03:26</div>
-                        </div>
-                    <!--</div>-->
-
-                    <iframe class="iframe" width="100%" height="700px" src="https://www.youtube.com/embed/YyUpmzZ9vzw" frameborder="0" allowfullscreen></iframe>
-                <!--</div>-->
+        <!-- Section presentation start -->
+        <!--<section class="presentation overlay">-->
+            <!--<div class="presentation__img_wrap">-->
+                <!--<img class="presentation__img" src="img/video_bg.jpg" alt="Presentation video"/>-->
             <!--</div>-->
+            <!--<div class="presentation_wrap">-->
+                <!--<img class="presentation__loader" src="img/loder.png" alt="Loading button"/>-->
+                <!--<h2 class="presentation__header">Waxom Video Presentation</h2>-->
+                <!--<p class="presentation__text">Investigationes demonstraverunt lectores legere me lius quod Lorem ipsum dolor sit amet, consectetur.</p>-->
+                <!--<div class="presentation__time">03:26</div>-->
+            <!--</div>-->
+
+            <!--<iframe class="iframe" width="100%" height="700px" src="https://www.youtube.com/embed/YyUpmzZ9vzw" frameborder="0" allowfullscreen></iframe>-->
+        <!--</section>-->
+        <!-- Section presentation end -->
+
+
+        <!-- Section presentation start -->
+        <section class="presentation overlay">
+            <div class="presentation__img_wrap">
+                <img class="presentation__img" src="img/video_bg.jpg" alt="Presentation video"/>
+            </div>
+
+            <div class="presentation_wrap">
+                <div class="presentation__loader">
+                    <i class="icon-play presentation__loader-icon"></i>
+                </div>
+                <h2 class="presentation__header">Waxom Video Presentation</h2>
+                <p class="presentation__text">Investigationes demonstraverunt lectores legere me lius quod Lorem ipsum dolor sit amet, consectetur.</p>
+                <div class="presentation__time">03:26</div>
+            </div>
+
+            <video id="video" class="video" width="100%" height="100%" controls="controls" loop="loop" tabindex="0">
+                <!--<source src="img/presentation.ogv" type='video/ogg; codecs="theora, vorbis"'>-->
+                <source src="img/presentation.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                <source src="img/presentation.webm" type='video/webm; codecs="vp8, vorbis"'>
+            </video>
         </section>
-
-
-        <!--<video id="video" width="100%" height="700" controls="controls" poster="" loop="loop" tabindex="0">-->
-            <!--<source src="img/presentation.ogv" type='video/ogg; codecs="theora, vorbis"'>-->
-            <!--<source src="img/presentation.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>-->
-            <!--<source src="img/presentation.webm" type='video/webm; codecs="vp8, vorbis"'>-->
-        <!--</video>-->
+        <!-- Section presentation end -->
 
 
 
 
-        <!-- section for space -->
-        <section style="height: 300px; background: #eeeeee;">
+        <!-- section for space start -->
+        <section style="height: 300px;">
             <div class="container">
-                <div class="row"></div>
+                <div class="row">
+
+                </div>
             </div>
         </section>
+        <!-- section for space end -->
+
         
         <!-- buttot to top -->
         <div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
 
+
         <!-- for modal windows -->
         <div class="hidden"></div>
-        
+
+
         <!-- for modal windows -->
         <div class="hidden">
             <!--<form class="popup callback zoom-anim-dialog" id="callback">-->

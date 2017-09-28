@@ -34,8 +34,12 @@
 .logo {
   font-family: RalewayRegular;
   color: $white;
-  text-align: center;
+  text-align: left;
   font-size: 0;
+
+  @include media("<992px") {
+    text-align: center;
+  }
 
   &__img,
   &__text {
@@ -63,23 +67,35 @@
 }
 
 .search {
+  font-size: 0;
+
   &__cart,
   &__search {
     display: inline-block;
+    font-family: 'waxom-icon';
+    font-size: 25px;
+    color: $white;
+
+    &::before {
+      margin: 0;
+    }
   }
 
   &__cart {
     margin-right: 20px;
 
+    &::before {
+      text-align: left;
+    }
     @include media("<480px") {
       display: none;
     }
-
     @include media("<1200px", ">991px") {
-      margin-right: 4px;
+      margin: 0;
     }
   }
 }
+
 .header-menu.sf-menu,
 .sf-menu .header-submenu {
   @extend %listreset;

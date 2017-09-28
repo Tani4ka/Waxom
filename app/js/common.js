@@ -86,31 +86,6 @@ $(function() {
 
                         /***** Aditional scripts *****/
 
-    /* Equalheight from plugin */
-
-    (function ($) {
-        $.fn.equalHeights = function () {
-            var $items = $(this);
-            function equalize() {
-                $items.height('initial');
-                var maxH = $items.eq(0).height();
-                $items.each(function () {
-                    maxH = ($(this).height() > maxH) ? $(this).height() : maxH;
-                });
-                $items.height(maxH);
-            }
-            equalize();
-            $(window).bind('resize', function () {
-                equalize();
-            });
-        };
-    })(jQuery);
-
-    // call equalHeights
-    $('.products__header').equalHeights();
-    $('.products__text').equalHeights();
-
-
     /* Fixed sidebar block */
 
     //$(function(){
@@ -208,12 +183,6 @@ $(function() {
     //}carouselService();
 
 
-    function logoHeight() {
-        var logoHeight = $('.logo').outerHeight();
-        $('.search_wrap').css('min-height', logoHeight);
-    }logoHeight();
-
-
     /* Blocks the same height */
 
     //function carouselService() {
@@ -238,12 +207,6 @@ $(function() {
     //    var ths = $(this);
     //    ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>')); // выделяет последнее слово в span
     //});
-
-
-    $('.s-theme__header').each(function () {
-        var ths = $(this);
-        ths.html(ths.html().replace(/^(\S+)/, '<span class="s-theme__header_beige">$1</span>'));  // выделяет первое слово в span
-    });
 
 
     /* Selectize */
@@ -304,16 +267,6 @@ $(function() {
     //    </div>
     //</section>
 
-    $('.owl-carousel').owlCarousel({
-        loop:true,
-        nav:true,
-        dots: true,
-        items:1,
-        //itemClass: 'slide-wrap',
-        navText: ['<div class="carousel__nav">', '<div class="carousel__nav">'],
-        smartSpeed: 700
-    })
-
     // nav for additional owl-nav
     //$('.owl-nav__prev').click(function(){
     //    owl.trigger('prev.owl.carousel');
@@ -321,6 +274,73 @@ $(function() {
     //$('.owl-nav__next').click(function(){
     //    owl.trigger('next.owl.carousel');
     //});
+
+
+    /* Magnific-popup */
+
+    //$('.popup-with-move-anim').magnificPopup({
+    //    type: 'inline',
+    //    fixedContentPos: false,
+    //    fixedBgPos: true,
+    //    overflowY: 'auto',
+    //    closeBtnInside: true,
+    //    preloader: false,
+    //    midClick: true,
+    //    removalDelay: 300,
+    //    mainClass: 'my-mfp-slide-bottom'
+    //});
+
+
+    /* Equalheight from plugin */
+
+    (function ($) {
+        $.fn.equalHeights = function () {
+            var $items = $(this);
+            function equalize() {
+                $items.height('initial');
+                var maxH = $items.eq(0).height();
+                $items.each(function () {
+                    maxH = ($(this).height() > maxH) ? $(this).height() : maxH;
+                });
+                $items.height(maxH);
+            }
+            equalize();
+            $(window).bind('resize', function () {
+                equalize();
+            });
+        };
+    })(jQuery);
+
+    // call equalHeights
+    $('.products__header').equalHeights();
+    $('.products__text').equalHeights();
+
+
+    /* Blocks the same height for owl-carousel for images */
+
+    function logoHeight() {
+        var logoHeight = $('.logo').outerHeight();
+        $('.search_wrap').css('min-height', logoHeight);
+    }logoHeight();
+
+    /* Add last/first span for cms */
+
+    $('.s-theme__header').each(function () {
+        var ths = $(this);
+        ths.html(ths.html().replace(/^(\S+)/, '<span class="s-theme__header_beige">$1</span>'));  // выделяет первое слово в span
+    });
+
+
+    /* Owl-carousel */
+
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        nav:true,
+        dots: true,
+        items:1,
+        navText: ['<div class="carousel__nav">', '<div class="carousel__nav">'],
+        smartSpeed: 700
+    })
 
 
     /* Mmenu */
@@ -354,29 +374,21 @@ $(function() {
     });
 
 
-    /* Magnific-popup */
+    /* Video */
 
-    //$('.popup-with-move-anim').magnificPopup({
-    //    type: 'inline',
-    //    fixedContentPos: false,
-    //    fixedBgPos: true,
-    //    overflowY: 'auto',
-    //    closeBtnInside: true,
-    //    preloader: false,
-    //    midClick: true,
-    //    removalDelay: 300,
-    //    mainClass: 'my-mfp-slide-bottom'
-    //});
+    $(".presentation__loader").click(function() {
+        $(".video").get(0).play();
+        $(".video").css('z-index', '5');
+    });
+
+    $(".video").mouseleave(function() {
+        if (video.paused) {
+            $(".video").css('z-index', '0');
+        }
+    });
 
 
-    /* What form did the application come from (for magnific-popup) */
 
-    //$('a[href="#callback"]').click(function() {      // возьмет из кнопки зачение data-form и вставит в input[type=hidden] value с этим значением, чтобы знать с какой фрмы пришла заявка
-    //    $('#callback .formname').val($(this).data('form'));
-    //});
-
-    //presentationHeight = $(".presentation__img").outerHeight();
-    //$(".presentation__wrap").css('top', 'presentationHeight');
 
 });
 
