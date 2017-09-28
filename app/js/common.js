@@ -389,6 +389,13 @@ $(function() {
 
 
 
+    //$(function(){
+    //    $('.device').height($('.device').width()/2.75);
+    //
+    //    $(window).resize(function(){
+    //        $('.device').height($('.device').width()/2.75);
+    //    });
+    //});
 
 });
 
