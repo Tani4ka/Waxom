@@ -159,9 +159,9 @@
   }
 }
 
-/* s-products */
+/* products */
 
-.s-products {
+.products_wrap {
   padding: 70px 0 30px;
 }
 
@@ -238,11 +238,13 @@
 
 /* theme */
 
-.s-theme {
+.inverse {
   background-image: linear-gradient(to right, #211b19, #4e3428);
   padding: 40px 0 35px;
   color: $accent;
+}
 
+.theme {
   &__header {
     margin-bottom: 0px;
     color: $white;
@@ -284,9 +286,9 @@
 }
 
 
-/* s-ideas */
+/* ideas */
 
-.s-ideas {
+.ideas {
   padding-top: 92px;
   text-align: center;
   background: #fbfaf8;
@@ -347,9 +349,9 @@
   }
 }
 
-/* s-portfolio */
+/* portfolio */
 
-.s-portfolio {
+.portfolio {
   padding: 70px 0 80px;
   text-align: center;
 }
@@ -586,15 +588,6 @@
     }
   }
 
-  //&__loader {
-  //  display: block;
-  //  margin: 0 auto 35px;
-  //
-  //  @include media("<992px") {
-  //    margin-bottom: 20px;
-  //  }
-  //}
-
   &_wrap {
     position: absolute;
     top: 50%;
@@ -667,52 +660,59 @@ video::-webkit-media-controls-panel {
   background: black;
 }
 
-//.iframe {
-//  position: absolute;
-//  top: 0;
-//  left: 0;
-//  width: 100%;
-//  height: 100%;
-//  z-index: 0;
-//  opacity: 0;
-//}
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
 
 
-/* s-device */
+/* device */
 .device {
-  
+  padding-bottom: 50px;
+  background-size: auto;
+  background-position: 20% 100%;
+
   @include media(">=1200px") {
     padding: 185px 0 178px;
+    background-position: 28.2% 100%;
+    background-position: calc(50% - 325px) 100%;
   }
   @include media("<1200px") {
     padding: 110px 0;
+    background-position: 10% 100%;
+    background-position: calc(50% - 250px) 100%;
   }
   @include media("<992px") {
     padding: 0 0 70px;
+    background-position: calc(50% - 155px) 100%;
   }
   @include media("<768px") {
-    padding-bottom: 50px;
+    background-image: none !important;
   }
 
-  &__img_wrap {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-127%);
-    bottom: 0;
-
-    @include media(">=1200px") {
-      transform: translateX(-127%);
-    }
-    @include media("<1200px") {
-      transform: translateX(-110%);
-    }
-    @include media("<992px") {
-      transform: translateX(-95%);
-    }
-    @include media("<768px") {
-      display: none;
-    }
-  }
+  //&__img {
+  //  position: absolute;
+  //  left: 50%;
+  //  transform: translateX(-127%);
+  //  bottom: 0;
+  //
+  //  @include media(">=1200px") {
+  //    transform: translateX(-127%);
+  //  }
+  //  @include media("<1200px") {
+  //    transform: translateX(-110%);
+  //  }
+  //  @include media("<992px") {
+  //    transform: translateX(-95%);
+  //  }
+  //  @include media("<768px") {
+  //    display: none;
+  //  }
+  //}
 
   &__header {
     margin: 0 0 22px;
@@ -771,9 +771,78 @@ video::-webkit-media-controls-panel {
 
 }
 
+/* advantages */
+
+.advantages {
+  text-align: center;
+  color: $accent;
+  
+  &-item_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    @include media(">=1200px") {
+      padding: 0 70px;
+    }
+
+    @include media("<1200px") {
+      justify-content: center;
+    }
+  }
+  
+  &-item {
+    position: relative;
+    min-width: 145px;
+    margin-bottom: 25px;
+
+    @include media(">=480px") {
+      min-width: 200px;
+    }
+    @include media(">=1200px") {
+      min-width: 150px;
+    }
+    @include media(">=992px") {
+      min-width: 150px;
+    }
+    @include media(">=768px") {
+      min-width: 143px;
+    }
 
 
 
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translate(-50%);
+      width: 30px;
+      height: 2px;
+      background: $white;
+    }
+
+    &__icon {
+      display: block;
+      font-family: 'fontello-icon';
+      font-size: 48px;
+      line-height: 2.15em;
+    }
+
+    &__count {
+      font-size: 46px;
+      color: $white;
+      line-height: 0.6em;
+    }
+
+    &__text {
+      text-transform: uppercase;
+      font-size: 0.875em;
+      padding: 8px 0 12px;
+    }
+  }
+}
 
 
 
@@ -786,6 +855,7 @@ video::-webkit-media-controls-panel {
 //  position: absolute;
 //  top: 0px;
 //  left: 0px;
+//  transform: translate(-50%);
 //  width: 10px;
 //  height: 10px;
 //  background: $dark;

@@ -379,15 +379,19 @@ $(function() {
     $(".presentation__loader").click(function() {
         $(".video").get(0).play();
         $(".video").css('z-index', '5');
-    });
-
-    $(".video").mouseleave(function() {
-        if (video.paused) {
-            $(".video").css('z-index', '0');
-        }
+        $(".video").css('background', 'black');
     });
 
 
+    /* iframe */
+
+    //$(".presentation__loader").click(function() {
+    //    $("#iframe").css('z-index', '5');
+    //    $("#iframe")[0].src = "https://www.youtube.com/embed/YyUpmzZ9vzw?autoplay=1";
+    //});
+
+
+    /* height depend from width */
 
     //$(function(){
     //    $('.device').height($('.device').width()/2.75);
