@@ -1,7 +1,8 @@
 /* ---------------------------------------------------------
                             Main
    ---------------------------------------------------------*/
-.carousel {
+.carousel,
+.carousel2{
   position: relative;
 }
 
@@ -433,7 +434,6 @@
 
 
 .cd-gallery.portfolio-galary {
-  //min-height: 720px;
   padding: 70px 0 10px;
 
   @include media("<tablet") {
@@ -449,8 +449,8 @@
   }
 
   .portfolio-galary__li {
-    background: #fbfaf8;
     margin-bottom: 30px;
+    background: #fbfaf8;
     @extend %transition;
     //box-shadow: none;
 
@@ -503,7 +503,7 @@
     font-family: RalewayMedium;
     color: $accent;
     margin-bottom: 0;
-    padding-left: 30px;
+    padding: 0 30px;
 
     @include media("<tablet") {
       padding-left: 0;
@@ -513,7 +513,7 @@
   .portfolio-galary__text {
     color: #d1d1d1;
     margin-bottom: 22px;
-    padding-left: 30px;
+    padding: 0 30px;
 
     @include media("<tablet") {
       padding-left: 0;
@@ -843,6 +843,162 @@ video::-webkit-media-controls-panel {
     }
   }
 }
+
+/* posts */
+
+.posts {
+  padding: 72px 0 80px;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    text-align: center;
+    padding-bottom: 22px;
+  }
+}
+
+.carousel2 {
+
+  &__li {
+    position: relative;
+    margin: 0 10px 30px;
+    padding-bottom: 25px;
+    background: #fbfaf8;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    @extend %transition;
+
+    &:hover {
+      background: $main;
+
+      .carousel2__img {
+        &::before {
+          opacity: .7;
+        }
+        &::after {
+          border-bottom-color: $main;
+        }
+      }
+      .carousel2__header,
+      .carousel2__read {
+        color: $accent;
+      }
+      .carousel2__text {
+       color: $white;
+      }
+      //.carousel2__date {
+      //  opacity: 1;
+      //}
+    }
+  }
+
+  &__img {
+    margin-bottom: 25px;
+    position: relative;
+    @extend %transition;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: $main;
+      opacity: 0;
+      @extend %transition;
+    }
+  }
+
+  &__date {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 60px;
+    background: #363636;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 35px;
+    color: $white;
+    font-size: 24px;
+  }
+
+  &__month {
+    height: 25px;
+    display: block;
+    font-size: 12px;
+    line-height: 22px;
+    background: #000;
+    border-radius: 0 0 4px 4px;
+  }
+
+  &__header {
+    padding: 0 30px 5px;
+  }
+
+  &__text {
+    font-size: 0.875em;
+    line-height: 1.6em;
+    padding: 0 30px;
+  }
+
+  &__read {
+    color: $accent;
+    padding: 0 5px 0 30px;
+    font-size: 14px;
+  }
+
+  &__read:focus,
+  &__read:visited {
+    color: $accent;
+  }
+
+  &__icon {
+    font-family: 'FontAwesome';
+    font-size: 15px;
+    color: $accent;
+    vertical-align: middle;
+  }
+
+  &__nav {
+
+  }
+
+  &__li:hover {
+    background: $main;
+
+    .carousel2__img {
+      &::before {
+        opacity: .65;
+      }
+    }
+    .carousel2__header {
+      color: $accent;
+    }
+    .carousel2__text {
+      color: $white;
+    }
+    &__read {
+      color: $accent;
+    }
+    .carousel2__date {
+      background: $accent;
+    }
+    .carousel2__month {
+      background: #a38d73;
+    }
+
+    //.carousel2__date {
+    //  opacity: 1;
+    //}
+  }
+}
+
+
+
 
 
 

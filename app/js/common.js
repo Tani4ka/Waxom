@@ -333,13 +333,23 @@ $(function() {
 
     /* Owl-carousel */
 
-    $('.owl-carousel').owlCarousel({
+    $('.carousel').owlCarousel({
         loop:true,
         nav:true,
         dots: true,
         items:1,
         navText: ['<div class="carousel__nav">', '<div class="carousel__nav">'],
         smartSpeed: 700
+    })
+
+    $('.carousel2').owlCarousel({
+        loop:true,
+        nav:true,
+        dots: false,
+        items:3,
+        navText: ['<div class="carousel2__nav">', '<div class="carousel2__nav">'],
+        smartSpeed: 700
+
     })
 
 
