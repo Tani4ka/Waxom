@@ -334,23 +334,42 @@ $(function() {
     /* Owl-carousel */
 
     $('.carousel').owlCarousel({
-        loop:true,
-        nav:true,
+        loop: true,
+        nav: true,
         dots: true,
-        items:1,
+        items: 1,
         navText: ['<div class="carousel__nav">', '<div class="carousel__nav">'],
         smartSpeed: 700
-    })
+    });
 
     $('.carousel2').owlCarousel({
-        loop:true,
-        nav:true,
+        loop: true,
+        nav: true,
         dots: false,
-        items:3,
-        navText: ['<div class="carousel2__nav">', '<div class="carousel2__nav">'],
-        smartSpeed: 700
+        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+        smartSpeed: 700,
+        items: 3,
+        responsive : {
+            0   : { items : 1  },
+            600 : { items : 2  },
+            768 : { items : 2  },
+            992 : { items : 3
+            }
+        }
+    });
 
-    })
+    $('.carousel3').owlCarousel({
+        loop: true,
+        nav: false,
+        dots: false,
+        smartSpeed: 700,
+        items: 4,
+        responsive : {
+            0   : { items : 2  },
+            480   : { items : 3  },
+            992 : { items : 4  }
+        }
+    });
 
 
     /* Mmenu */
