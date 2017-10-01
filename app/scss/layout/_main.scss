@@ -24,7 +24,7 @@
     font-family: RalewayMedium;
     font-size: 36px;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.2em;
     color: $white;
 
     @include media("<tablet") {
@@ -769,7 +769,7 @@ video::-webkit-media-controls-panel {
       font-size: 19px;
       color: $white;
       text-align: center;
-      line-height: 22px;
+      line-height: 1.158em;
 
       @include media("<992px") {
         left: 15px;
@@ -924,19 +924,19 @@ video::-webkit-media-controls-panel {
     left: 20px;
     width: 50px;
     height: 60px;
-    background: #363636;
     border-radius: 4px;
-    text-align: center;
-    line-height: 35px;
+    background: #363636;
     color: $white;
+    text-align: center;
     font-size: 24px;
+    line-height: 1.46em;
   }
 
   &__month {
     height: 25px;
     display: block;
     font-size: 12px;
-    line-height: 22px;
+    line-height: 1.83em;
     background: #000;
     border-radius: 0 0 4px 4px;
   }
@@ -951,25 +951,6 @@ video::-webkit-media-controls-panel {
     padding: 0 30px;
   }
 
-  &__read {
-    color: $accent;
-    padding: 0 5px 0 30px;
-    font-size: 14px;
-  }
-
-  &__read:focus,
-  &__read:visited {
-    color: $accent;
-  }
-
-  &__icon {
-    font-family: 'FontAwesome';
-    font-size: 15px;
-    color: $accent;
-    vertical-align: middle;
-  }
-
-
   &__li:hover {
     background: $main;
 
@@ -983,9 +964,6 @@ video::-webkit-media-controls-panel {
     }
     .carousel2__text {
       color: $white;
-    }
-    &__read {
-      color: $accent;
     }
     .carousel2__date {
       background: $accent;
@@ -1029,6 +1007,29 @@ video::-webkit-media-controls-panel {
   }
 }
 
+.read-more {
+  position: relative;
+  color: $accent;
+  padding: 0 5px 0 30px;
+  font-size: 14px;
+
+  &:hover,
+  &:focus {
+    color: $accent;
+  }
+  &::before {
+    content: "\f0da";
+    position: absolute;
+    bottom: 10%;
+    right: -10px;
+    font-family: FontAwesome;
+    font-size: 15px;
+    line-height: 1em;
+  }
+}
+
+
+/* partners */
 
 .partners {
   padding: 140px 0;
@@ -1036,26 +1037,29 @@ video::-webkit-media-controls-panel {
   @include media("<992px") {
     padding: 100px 0;
   }
-
   @include media("<768px") {
     padding: 80px 0;
   }
-
   @include media("<768px") {
     padding: 60px 0;
+  }
+  @include media("<480px") {
+    padding: 20px 0;
   }
 
   &__logo {
     position: relative;
     z-index: 5;
-    display: flex;
+  }
+
+  .owl-stage {
+    display: flex;  // for height 100%
   }
 
   &__img-wrap {
     padding: 0 20px;
     height: 100%;
     display: flex;
-    margin: auto;
 
     @include media(">=992px") {
       padding: 0 25px;
@@ -1065,26 +1069,12 @@ video::-webkit-media-controls-panel {
     }
   }
 
-  .owl-stage {
-    display: flex;
-  }
-
   &__img {
     height: auto;
     max-width: 100%;
     margin: auto;
   }
-
-  .owl-carousel .owl-item img {
-    width: auto;
-  }
 }
-
-
-
-
-
-
 
 
 
@@ -1102,6 +1092,25 @@ video::-webkit-media-controls-panel {
 //  width: 10px;
 //  height: 10px;
 //  background: $dark;
+//}
+
+// for icon fontAwesome
+//&__read {
+//  position: relative;
+//  color: $accent;
+//  padding: 0 5px 0 30px;
+//  font-size: 14px;
+//
+//  &::before {
+//    content: "\f0da";
+//    position: absolute;
+//    bottom: 15%;
+//    right: -10px;
+//    font-family: FontAwesome;
+//    font-size: 15px;
+//    color: $accent;
+//    line-height: 15px;
+//  }
 //}
 
 // @extend %flex;

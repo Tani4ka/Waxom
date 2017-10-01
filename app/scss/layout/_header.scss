@@ -43,17 +43,19 @@
   }
 
   &__img,
-  &__text {
+  &__name {
     display: inline-block;
   }
 
-  &__text {
+  &__name {
     font-size: 34px;
     vertical-align: middle;
+  }
+}
 
-    @include media("<480px") {
-      display: none;
-    }
+.header .logo__name {
+  @include media("<480px") {
+    display: none;
   }
 }
 
