@@ -4,7 +4,7 @@
 /* Top line */
 .header {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   width: 100%;
 }
 
@@ -151,7 +151,7 @@
   //submenu
   .header-submenu {
     &__li {
-      background: rgba(54, 47, 45, .3);
+      background: #998676;
     }
 
     &__link {
@@ -165,7 +165,7 @@
   .header-submenu__li_active {
 
     >.header-submenu__link {
-      color: $accent;
+      background-color: lighten($btn-background, 8%);
     }
   }
 }
@@ -249,7 +249,10 @@ html.mm-opened {
   display: none;
 }
 
-
+.header-menu__li .mm-next:after,
+.header-submenu__li .mm-next:after{
+  right: 30px;
+}
 
 
 

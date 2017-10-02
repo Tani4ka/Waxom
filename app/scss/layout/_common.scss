@@ -75,12 +75,13 @@
   background: #e0e0e0;
   color: #666;
   border-radius: 50%;
-  opacity: .5;
+  opacity: .8;
   @extend %transition;
   
   &:hover {
-    background: $accent;
+    background: #998676;
     opacity: 1;
+    color: $white;
   }
 
   &.active {

@@ -323,6 +323,7 @@ $(function() {
         $('.search_wrap').css('min-height', logoHeight);
     }logoHeight();
 
+
     /* Add last/first span for cms */
 
     $('.s-theme__header').each(function () {
@@ -392,32 +393,40 @@ $(function() {
     $(".toggle-mnu").click(function() {
         var mmApi = $("#my-menu").data( "mmenu" );
         mmApi.open();
-        var thiss = $(this).find(".toggle-mnu");
-        thiss.addClass("on");
+        $(".toggle-mnu").addClass("on");
         $(".main-mnu").slideToggle();
         return false;
     });
 
-    $(".ishome").click(function() {
-        $(".toggle-mnu").removeClass("on");
+    $(".mm-slideout").click(function() {
+       $(".toggle-mnu").removeClass("on");
     });
 
+    // // https://codepen.io/agragregra/pen/bEbbmZ
+    //$(".toggle-mnu").click(function() {
+    //    var mmApi = $("#my-menu").data( "mmenu" );
+    //    mmApi.open();
+    //    var thiss = $(this).find(".toggle-mnu");
+    //    thiss.addClass("on");
+    //    $(".main-mnu").slideToggle();
+    //    return false;
+    //});
 
     /* Video */
 
-    $(".presentation__loader").click(function() {
-        $(".video").get(0).play();
-        $(".video").css('z-index', '5');
-        $(".video").css('background', 'black');
-    });
+    //$(".presentation__loader").click(function() {
+    //    $(".video").get(0).play();
+    //    $(".video").css('z-index', '5');
+    //    $(".video").css('background', 'black');
+    //});
 
 
     /* iframe */
 
-    //$(".presentation__loader").click(function() {
-    //    $("#iframe").css('z-index', '5');
-    //    $("#iframe")[0].src = "https://www.youtube.com/embed/YyUpmzZ9vzw?autoplay=1";
-    //});
+    $(".presentation__loader").click(function() {
+        $("#iframe").css('z-index', '5');
+        $("#iframe")[0].src = "https://www.youtube.com/embed/YyUpmzZ9vzw?autoplay=1";
+    });
 
 
     /* height depend from width */
