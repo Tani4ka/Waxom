@@ -2,7 +2,6 @@
 /dist/
 /**/*.psd
 /**/*.sketch
-/**/*.jpg
 /.git/
 /.idea/**/
 /**/Thumbs.db
