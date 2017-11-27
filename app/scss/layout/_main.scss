@@ -78,8 +78,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    top: 50%;
-    margin-top: -18px;
+    top: 48%;
     width: 100%;
     z-index: 2;
     font-size: 25px;
@@ -93,6 +92,22 @@
   .owl-prev,
   .owl-next {
     position: absolute;
+    width: 74px;
+    height: 74px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 53px;
+      height: 53px;
+      background: transparent;
+      border-bottom: 3px solid $white;
+      border-left: 3px solid  $white;
+      opacity: .5;
+      @extend %transition;
+    }
 
     &:hover {
       .carousel__nav {
@@ -103,35 +118,44 @@
 
   .owl-prev {
     left: 15px;
+
     @include media(">=1800px") {
       left: -215px;
+    }
+    &:before {
+      transform: rotate(45deg) translate(15px);
+    }
+  }
+  .owl-next {
+    right: 15px;
+
+    @include media(">=1800px") {
+      right: -215px;
+    }
+    &:before {
+      transform: rotate(225deg) translate(-15px);
     }
   }
 }
 
-.owl-next {
-  right: 15px;
-  @include media(">=1800px") {
-    right: -215px;
-  }
-}
 
-.carousel__nav {
-  width: 53px;
-  height: 53px;
-  background: transparent;
-  border-bottom: 3px solid $white;
-  border-left: 3px solid  $white;
-  transform: rotate(45deg);
-  opacity: .5;
-  @extend %transition;
-}
 
-.owl-next {
-  .carousel__nav {
-    transform: rotate(225deg);
-  }
-}
+//.carousel__nav {
+//  width: 53px;
+//  height: 53px;
+//  background: transparent;
+//  border-bottom: 3px solid $white;
+//  border-left: 3px solid  $white;
+//  transform: rotate(45deg) translate(15px);
+//  opacity: .5;
+//  @extend %transition;
+//}
+
+//.owl-next {
+//  .carousel__nav {
+//    transform: rotate(225deg) translate(-15px);
+//  }
+//}
 
 .owl-carousel .owl-item {
   backface-visibility: inherit;

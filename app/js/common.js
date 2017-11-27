@@ -134,7 +134,8 @@ $(function() {
         nav: true,
         dots: true,
         items: 1,
-        navText: ['<div class="carousel__nav">', '<div class="carousel__nav">'],
+        navText: "",
+        //navText: ['<div class="carousel__nav">', '<div class="carousel__nav">'],
         smartSpeed: 700
     });
 
@@ -224,6 +225,33 @@ $(function() {
     //        $('.device').height($('.device').width()/2.75);
     //    });
     //});
+
+
+    /* Number counter */
+
+    var adv = $(".advantages-item__count");
+    var advOffsetTop = adv.offset().top;
+    var windowHeight = $(window).height();
+    //console.log($(window).scrollTop());
+    //console.log(advOffsetTop);
+    //console.log(windowHeight);
+
+    $(window).scroll(startCounter);
+    function startCounter() {
+        if ($(window).scrollTop() > advOffsetTop - windowHeight) {
+            $(window).off("scroll", startCounter);
+            $('.advantages-item__count').each(function () {
+                var $this = $(this);
+                jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+                    duration: 3000,
+                    easing: 'swing',
+                    step: function () {
+                        $this.text(Math.ceil(this.Counter));
+                    }
+                });
+            });
+        }
+    }
 
 });
 
